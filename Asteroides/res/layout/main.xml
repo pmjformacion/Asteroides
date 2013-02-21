@@ -30,12 +30,12 @@ xmlns:android="http://schemas.android.com/apk/res/android"
          android:id="@+id/Button03"
          android:layout_width="fill_parent"
          android:layout_height="wrap_content"
-         android:onClick="lanzarAcercaDe"
          android:text="@string/Acercade" />
 
-     <Button android:id="@+id/Button04"
-          android:layout_height="wrap_content"
-          android:layout_width="fill_parent"
-          android:text="@string/Salir"/>
+     <Button
+         android:id="@+id/Button04"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/Salir" />
  
   </LinearLayout>
