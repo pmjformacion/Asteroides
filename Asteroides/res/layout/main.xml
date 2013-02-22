@@ -1,41 +1,55 @@
- <LinearLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:gravity="center"
-    android:padding="30dip"
-    tools:context="Asteroides" >
+                                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/iconapp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="30dip"
+                    tools:context="Asteroides" >
 
-  <TextView 
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/tituloAplicacion"
-    android:gravity="center"
-    android:textSize="25sp"
-    android:layout_marginBottom="20dip"/>
+<!-- 
+    <TextView style="@style/TextoAsteroides"
+		android:text="@string/tituloAplicacion"/>
+         
+     <Button android:id="@+id/Button01"
+          style="@style/TextoAsteroides.Botones"
+          android:text="@string/Arrancar"/>
+    
+ -->    
+    <TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		style="@style/TextoAsteroides"
+		android:text="@string/tituloAplicacion"
+		android:gravity="center"
+		android:textSize="25sp"
+		android:layout_marginBottom="20dip" />
+
 
      <Button android:id="@+id/Button01"
-          android:layout_height="wrap_content"
-          android:layout_width="fill_parent"
-          android:text="@string/Arrancar"/>
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        style="@style/TextoAsteroides.Botones"
+        android:text="@string/Arrancar" />
 
      <Button android:id="@+id/Button02"
-          android:layout_height="wrap_content"
-          android:layout_width="fill_parent"
-          android:text="@string/Configurar"/>
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:text="@string/Configurar"
+		style="@style/TextoAsteroides.Botones" />
 
      <Button
-         android:id="@+id/Button03"
-         android:layout_width="fill_parent"
-         android:layout_height="wrap_content"
-         android:text="@string/Acercade" />
+        android:id="@+id/Button03"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Acercade" 
+        style="@style/TextoAsteroides.Botones" />
 
      <Button
          android:id="@+id/Button04"
          android:layout_width="fill_parent"
          android:layout_height="wrap_content"
-         android:text="@string/Puntuaciones" />
+         android:text="@string/Puntuaciones" 
+         style="@style/TextoAsteroides.Botones" />
  
   </LinearLayout>
