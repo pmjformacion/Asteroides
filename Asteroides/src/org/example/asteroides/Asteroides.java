@@ -18,6 +18,7 @@ public class Asteroides extends Activity {
 	private Button bConfigurar;
 	
 	
+	public static AlmacenPuntuaciones almacen = new AlmacenPuntuacionesArray();
 	
 	
 	
@@ -95,7 +96,8 @@ public class Asteroides extends Activity {
 	
 	public void lanzarSalir(View view){
 		// Finaliza la actividad 'Asteroides'
-		finish();
+		//finish();
+		lanzarPuntuaciones(null);
 	}
 
 	public void lanzarPreferencias(View view){
@@ -104,6 +106,11 @@ public class Asteroides extends Activity {
 		startActivity(i);
 	}	
 	
+	
+	public void lanzarPuntuaciones (View view){
+		Intent i = new Intent(this, Puntuaciones.class);
+		startActivity(i);
+	}
 	
 	/**
 	 * Código para activar el menú en la actividad 'Asteroides'

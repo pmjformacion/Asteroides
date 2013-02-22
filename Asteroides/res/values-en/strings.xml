@@ -6,5 +6,6 @@
     <string name="Configurar">Settings</string>
     <string name="Salir">Exit</string>
     <string name="tituloAplicacion">Asteroides</string>
+    <string name="Puntuaciones">Scores</string>
     
 </resources>
