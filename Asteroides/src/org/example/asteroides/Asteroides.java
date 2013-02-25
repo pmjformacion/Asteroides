@@ -48,7 +48,7 @@ public class Asteroides extends Activity {
 		
 		//Añadimos un Listener Event (oyente de eventos)
 		// para el botón 'Salir'
-		bSalir = (Button) findViewById(R.id.Button04);
+		bSalir = (Button) findViewById(R.id.Button05);
 		bSalir.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -65,6 +65,17 @@ public class Asteroides extends Activity {
 					lanzarPreferencias(null);
 				}
 		});
+		
+		//Añadimos un Listener Event (oyente de eventos)
+		// para el botón 'Puntuaciones'
+		bSalir = (Button) findViewById(R.id.Button04);
+		bSalir.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				lanzarPuntuaciones(null);
+			}
+		});			
+		
 		
 	}
 				
@@ -96,8 +107,8 @@ public class Asteroides extends Activity {
 	
 	public void lanzarSalir(View view){
 		// Finaliza la actividad 'Asteroides'
-		//finish();
-		lanzarPuntuaciones(null);
+		finish();
+		//lanzarPuntuaciones(null);
 	}
 
 	public void lanzarPreferencias(View view){
