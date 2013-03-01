@@ -1,12 +1,14 @@
-                                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:tools="http://schemas.android.com/tools"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:background="@drawable/iconapp"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="30dip"
-                    tools:context="Asteroides" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@drawable/degradado"
+	android:gravity="center"
+	android:orientation="vertical"
+	android:padding="30dip"
+	tools:context="Asteroides" >
+                    
+ <!-- android:background="@drawable/iconapp"  -->                    
 
 <!-- 
     <TextView style="@style/TextoAsteroides"
@@ -25,12 +27,13 @@
 		android:textSize="25sp"
 		android:layout_marginBottom="20dip" />
 
-
-     <Button android:id="@+id/Button01"
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        style="@style/TextoAsteroides.Botones"
-        android:text="@string/Arrancar" />
+     <Button
+         android:id="@+id/Button01"
+         style="@style/TextoAsteroides.Botones"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:onClick="lanzarJuego"
+         android:text="@string/Arrancar" />
 
      <Button android:id="@+id/Button02"
         android:layout_height="wrap_content"

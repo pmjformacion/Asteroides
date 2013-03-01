@@ -123,6 +123,13 @@ public class Asteroides extends Activity {
 		startActivity(i);
 	}
 	
+	
+	public void lanzarJuego(View view){
+		Intent i = new Intent(this, Juego.class);
+		startActivity(i);
+	}
+	
+	
 	/**
 	 * Código para activar el menú en la actividad 'Asteroides'
 	 */
