@@ -1,15 +1,21 @@
 package org.example.asteroides;
 
+
+import java.util.List;
 import java.util.Vector;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-public class VistaJuego extends View {
+public class VistaJuego extends View implements SensorEventListener {
 
 	// //// ASTEROIDES //////
 	private Vector<Grafico> Asteroides; // Vector con los Asteroides
@@ -79,6 +85,18 @@ public class VistaJuego extends View {
         	 asteroide.setRotacion((int) (Math.random() * 8 - 4));
         	 Asteroides.add(asteroide);
          }
+         
+         // Registramos el sensor e indicamos que nuestro objeto
+         // recogerá la llamada callback
+         
+         SensorManager mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
+         List<Sensor> listSensors = mSensorManager.getSensorList(Sensor.TYPE_ORIENTATION);
+         if (!listSensors.isEmpty()){
+        	 Sensor orientationSensor = listSensors.get(0);
+        	 mSensorManager.registerListener(this, orientationSensor, SensorManager.SENSOR_DELAY_GAME);
+         }
+         
+         
 
 	}
 
@@ -184,6 +202,25 @@ public class VistaJuego extends View {
    
    }
    
+   /** MÓDULO 5 - Utilización de Sensores en Asteroides
+    * Métodos 'onAccuracyChanged' y 'onSensorChange' que implementan
+    * la interfaz 'SensorEventListener'
+    */
    
+   @Override
+   public void onAccuracyChanged(Sensor sensor, int accuracy) {}
+   
+   private boolean hayValorInicial = false;
+   private float valorInicial;
+   
+   @Override
+   public void onSensorChanged(SensorEvent event){
+	   float valor = event.values[1];
+	   if (!hayValorInicial){
+		   valorInicial = valor;
+		   hayValorInicial = true;
+	   }
+	   giroNave = (int) (valor - valorInicial)/3;
+   }
 	
 }
