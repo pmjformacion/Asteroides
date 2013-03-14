@@ -6,7 +6,11 @@ import java.util.Vector;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint.Style;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RectShape;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -40,6 +44,12 @@ public class VistaJuego extends View implements SensorEventListener {
 	private static int PERIODO_PROCESO = 50;
 	// Cuando se realizó el último proceso.
 	private long ultimoProceso = 0;
+	
+	// //// MISIL //// //
+	private Grafico misil;
+	private static int PASO_VELOCIDAD_MISIL=12;
+	private boolean misilActivo = false;
+	private int tiempoMisil;
 	
 	
 	// Para el manejo de la nave con pantalla dactil
@@ -96,6 +106,14 @@ public class VistaJuego extends View implements SensorEventListener {
         	 mSensorManager.registerListener(this, orientationSensor, SensorManager.SENSOR_DELAY_GAME);
          }
          
+         
+         // graficos vectoriales para misil
+         ShapeDrawable dMisil = new ShapeDrawable(new RectShape());
+         dMisil.getPaint().setColor(Color.WHITE);
+         dMisil.getPaint().setStyle(Style.STROKE);
+         dMisil.setIntrinsicWidth(15);
+         dMisil.setIntrinsicHeight(3);
+         drawableMisil = dMisil;
          
 
 	}
@@ -180,11 +198,11 @@ public class VistaJuego extends View implements SensorEventListener {
 	   case MotionEvent.ACTION_MOVE:
 		   float dx = Math.abs(x - mX);
 		   float dy = Math.abs(y - mY);
-		   if(dy<12 && dx>12){
-			   giroNave = Math.round((x - mX) /4);
+		   if(dy<3 && dx>3){
+			   giroNave = Math.round((x - mX) /2);
 			   disparo = false;
-		   } else if (dx<12 && dy>12){
-			   aceleracionNave = Math.round((mY - y) / 50);
+		   } else if (dx<3 && dy>3){
+			   aceleracionNave = Math.round((mY - y) / 12);
 			   disparo = false;
 		   }
 		   break;
