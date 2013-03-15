@@ -86,9 +86,13 @@ public class VistaJuego extends View implements SensorEventListener {
         	 Asteroides.add(asteroide);
          }
          
+         
+         /**
+          * Manejo de la nave con el sensor de orientación
+          */
          // Registramos el sensor e indicamos que nuestro objeto
          // recogerá la llamada callback
-         
+         // Manejo por el sensor de orientación
          SensorManager mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
          List<Sensor> listSensors = mSensorManager.getSensorList(Sensor.TYPE_ORIENTATION);
          if (!listSensors.isEmpty()){
@@ -96,6 +100,24 @@ public class VistaJuego extends View implements SensorEventListener {
         	 mSensorManager.registerListener(this, orientationSensor, SensorManager.SENSOR_DELAY_GAME);
          }
          
+         
+         /**
+          *  Modifica el ejemplo anterior para utilizar el sensor de aceleración en lugar del de orientación.
+          *  Gracias a la fuerza de gravedad que la Tierra ejerce sobre el terminal podremos saber si este 
+          *  está horizontal. En caso de que la nave este horizontal (o casi) no ha de girar, pero cuando 
+          *  el terminal se incline, la nave a de girar proporcionalmente a esta inclinación. Utiliza los 
+          *  programas anteriores para  descubrir que eje (x, y o z) es el que te interesa y el rango de 
+          *  valores que proporciona.
+          * */
+//         SensorManager mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
+//          List<Sensor> listSensors = mSensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER);
+//         if (!listSensors.isEmpty()){
+//        	 Sensor orientationSensor = listSensors.get(0);
+//        	 mSensorManager.registerListener(this, orientationSensor, SensorManager.SENSOR_DELAY_GAME);
+//         }
+   
+         
+    
          
 
 	}
