@@ -93,12 +93,12 @@ public class VistaJuego extends View implements SensorEventListener {
          // Registramos el sensor e indicamos que nuestro objeto
          // recogerá la llamada callback
          // Manejo por el sensor de orientación
-         SensorManager mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
-         List<Sensor> listSensors = mSensorManager.getSensorList(Sensor.TYPE_ORIENTATION);
-         if (!listSensors.isEmpty()){
-        	 Sensor orientationSensor = listSensors.get(0);
-        	 mSensorManager.registerListener(this, orientationSensor, SensorManager.SENSOR_DELAY_GAME);
-         }
+//         SensorManager mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
+//         List<Sensor> listSensors = mSensorManager.getSensorList(Sensor.TYPE_ORIENTATION);
+//         if (!listSensors.isEmpty()){
+//        	 Sensor orientationSensor = listSensors.get(0);
+//        	 mSensorManager.registerListener(this, orientationSensor, SensorManager.SENSOR_DELAY_GAME);
+//         }
          
          
          /**
@@ -109,12 +109,12 @@ public class VistaJuego extends View implements SensorEventListener {
           *  programas anteriores para  descubrir que eje (x, y o z) es el que te interesa y el rango de 
           *  valores que proporciona.
           * */
-//         SensorManager mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
-//          List<Sensor> listSensors = mSensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER);
-//         if (!listSensors.isEmpty()){
-//        	 Sensor orientationSensor = listSensors.get(0);
-//        	 mSensorManager.registerListener(this, orientationSensor, SensorManager.SENSOR_DELAY_GAME);
-//         }
+         SensorManager mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
+          List<Sensor> listSensors = mSensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER);
+         if (!listSensors.isEmpty()){
+        	 Sensor orientationSensor = listSensors.get(0);
+        	 mSensorManager.registerListener(this, orientationSensor, SensorManager.SENSOR_DELAY_GAME);
+         }
    
          
     
