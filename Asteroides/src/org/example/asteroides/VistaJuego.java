@@ -57,10 +57,37 @@ public class VistaJuego extends View implements SensorEventListener {
 	 */
 
 	class ThreadJuego extends Thread{
+		private boolean pausa, corriendo;
+		
+		public synchronized void pausar(){
+			pausa=true;
+		}
+		
+		public synchronized void reanudar(){
+			pausa=false;
+			notify();
+		}
+		
+		public void detener(){
+			corriendo=false;
+			if (pausa) reanudar();
+		}
+		
 		@Override 
 		public void run(){
-			while (true){
+			corriendo = true;
+			while (corriendo){
 				actualizaFisica();
+				synchronized (this){
+					while(pausa) {
+						try {
+							wait();
+						} catch (Exception e) {
+							
+						}
+						
+					}
+				}
 			}
 		}
 	}
@@ -244,5 +271,9 @@ public class VistaJuego extends View implements SensorEventListener {
 	   }
 	   giroNave = (int) (valor - valorInicial)/3;
    }
+
+public ThreadJuego getThread() {
+	return thread;
+}
 	
 }
