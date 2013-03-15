@@ -1,8 +1,13 @@
 package org.example.asteroides;
 
 
-import java.util.List;
+
 import java.util.Vector;
+
+import org.openintents.sensorsimulator.hardware.Sensor;
+import org.openintents.sensorsimulator.hardware.SensorEvent;
+import org.openintents.sensorsimulator.hardware.SensorEventListener;
+import org.openintents.sensorsimulator.hardware.SensorManagerSimulator;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -11,10 +16,6 @@ import android.graphics.Paint.Style;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RectShape;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -99,12 +100,11 @@ public class VistaJuego extends View implements SensorEventListener {
          // Registramos el sensor e indicamos que nuestro objeto
          // recogerá la llamada callback
          
-         SensorManager mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
-         List<Sensor> listSensors = mSensorManager.getSensorList(Sensor.TYPE_ORIENTATION);
-         if (!listSensors.isEmpty()){
-        	 Sensor orientationSensor = listSensors.get(0);
-        	 mSensorManager.registerListener(this, orientationSensor, SensorManager.SENSOR_DELAY_GAME);
-         }
+         //SensorManagerSimulator mSensorManager = (SensorManagerSimulator) context.getSystemService(Context.SENSOR_SERVICE);
+         SensorManagerSimulator mSensorManager = SensorManagerSimulator.getSystemService(Context.SENSOR_SERVICE);
+         mSensorManager.connectSimulator();
+       	 mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION), SensorManagerSimulator.SENSOR_DELAY_GAME);
+        
          
          
          // graficos vectoriales para misil
