@@ -1,0 +1,26 @@
+Pasos que he seguido para usar la librería Sensor Simulator de OpenIntents
+
+En el curso se da la referencia de la aplicación OpenIntents Sensor Simulator
+en:
+
+MÓDULO 5: Entradas en Android
+
+Apartado: Los sensores
+
+
+1. Baje la librería de SensorSimulator de la web de OpenIntents.
+   Puedes descargarte el software de http://www.openintents.org/en/node/6
+
+2. Importé desde Eclipse a la carpeta 'libs' del proyecto la librería 'sensorsimulator-lib-2.0-rc1.jar'
+
+3. Tiene que modificar el Manifiesto de la aplicación para autorizar el uso de INTERNET, ya
+   que la conexión con el simulador escrito en Java se hace a través de una IP y un puerto,
+   En este caso va a usar la IP:10.0.2.2  y el puerto 8010
+   
+   El punto 3 lo descubrí porque cuando arranca, al intentar conectar con el simulador externo no puede
+   y en la venta del 'LogCat' da la siguiente pista:
+   
+   ----------------------------------------------------------
+   Do you have the following persmission in your Manifiest?
+   <uses-permission android="android.permission.INTERNET"/>
+   ----------------------------------------------------------
