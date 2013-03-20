@@ -104,8 +104,11 @@ public class VistaJuego extends View implements SensorEventListener {
          //SensorManagerSimulator mSensorManager = (SensorManagerSimulator) context.getSystemService(Context.SENSOR_SERVICE);
          SensorManagerSimulator mSensorManager = SensorManagerSimulator.getSystemService(context, Context.SENSOR_SERVICE);
          mSensorManager.connectSimulator();
-       	 mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION), SensorManagerSimulator.SENSOR_DELAY_GAME);
-        
+         // Manejo de la nave con el sensor de orientación
+       	 //mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION), SensorManagerSimulator.SENSOR_DELAY_GAME);
+         
+         // Manejo de la nave con el sensor de aceleración
+         mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManagerSimulator.SENSOR_DELAY_GAME);
          
          
          // graficos vectoriales para misil
