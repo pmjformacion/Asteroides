@@ -1,0 +1,46 @@
+
+
+MODULO 6: Multimedia y ciclo de vida en una aplicación
+
+
+  --------------------------------
+* ¿Cuándo se llama a los eventos?
+   -------------------------------
+
+Modifca la clase Asteroides.java. Incluye la clase Toast para mostras bocadillos
+de cuando se pasa por cada estado en el desarrollo de la aplicación
+
+Se añade código en el método onCreate de Asteroides.java
+
+se añaden los métodos en Asteroides.java
+
+	onStart, onResume, onPause, OnStop, onRestart y onDestroy
+	
+Ejecutar aplicación para comprobar la secuencia de Toast
+
+
+  -------------------------------------------------------------
+* Aplicando ciclo de vida en la actividad 'Juego' de Asteroides
+  -------------------------------------------------------------
+
+  Ejercicio paso a paso: Aplicar eventos de ciclo de vida a la actividad 'Juego'
+  
+  Aplicación se ejecutarÃ¡ en un terminal con una versión 2.3.x de Android
+  
+  Se añade variable 'vistaJuego' en Actividad 'Juego'
+	
+  Se añaden en la actividad 'Juego' los métodos:
+  
+		onPause, onResume, onDestroy
+		
+  Abre la clase 'VistaJuego.java' y la reemplaza por un código nuevo, que modifica el 
+  método run(), y añade los métodos pausar(), reanudar() y detener(), getThread
+  
+  
+
+  -------------------------------------------------
+* Aplicando eventos del ciclo de vida en Asteroides
+  -------------------------------------------------
+
+	
+	
