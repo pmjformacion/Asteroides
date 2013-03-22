@@ -194,4 +194,37 @@ public class Asteroides extends Activity {
 	}	
 	
 	
+	/** BEGIN SAVE STATE
+	 * Módulo 6 - Funciones para guardar el estado de Asteroides.
+	 * 
+	 * Guardo donde estaba el sonido de audio y luego reinicio
+	 * el audio donde se había quedado
+	 * 
+	 * Implemento la solución que dan ellos en el curso
+	 * 
+	 */
+	
+	
+	@Override
+	protected void onSaveInstanceState(Bundle estadoGuardado) {
+		super.onSaveInstanceState(estadoGuardado);
+		if (mp != null){
+			int pos = mp.getCurrentPosition();
+			estadoGuardado.putInt("posicion", pos);
+		}
+	}
+	
+	@Override
+	protected void onRestoreInstanceState(Bundle estadoGuardado){
+		super.onRestoreInstanceState(estadoGuardado);
+		if (estadoGuardado != null && mp != null){
+			int pos = estadoGuardado.getInt("posicion");
+			mp.seekTo(pos);
+		}
+	}
+	
+	/** END SAVE STATE */
+	
+	
+	
 }

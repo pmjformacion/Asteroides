@@ -72,4 +72,19 @@ Ejecutar aplicación para comprobar la secuencia de Toast
 	  
 	  
 	  
+  -------------------------------------------------
+* Guardando el estado en Asteroides
+  -------------------------------------------------
+  
+  	- Práctica: Guardando el estado de Android
+  	  Al cambiar la orientación del teléfono, la música se reinicia.
+  	  Usando métodos para guardar y recuperar el estado, hacer que el audio
+  	  contínue donde estaba antes de voltear el teléfono.
+  	  Use los métodos mp.getCurrentPosition() y mp.seekTo(pos)
+  	  
+	- Solucíon: el da una posible solución
+	
+	
+	  
+	  
 	
