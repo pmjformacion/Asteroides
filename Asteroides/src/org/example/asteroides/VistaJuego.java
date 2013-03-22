@@ -52,7 +52,8 @@ public class VistaJuego extends View implements SensorEventListener {
 	private float mX=0, mY=0;
 	private boolean disparo=false;
 	
-	
+	// Hago private mSensorManager para poder desactivar los sensores.
+	private SensorManager mSensorManager;
 	
 	/**
 	 * Módulo 5: Entradas en Android
@@ -133,21 +134,7 @@ public class VistaJuego extends View implements SensorEventListener {
 //        	 mSensorManager.registerListener(this, orientationSensor, SensorManager.SENSOR_DELAY_GAME);
 //         }
          
-         
-         /**
-          *  Modifica el ejemplo anterior para utilizar el sensor de aceleración en lugar del de orientación.
-          *  Gracias a la fuerza de gravedad que la Tierra ejerce sobre el terminal podremos saber si este 
-          *  está horizontal. En caso de que la nave este horizontal (o casi) no ha de girar, pero cuando 
-          *  el terminal se incline, la nave a de girar proporcionalmente a esta inclinación. Utiliza los 
-          *  programas anteriores para  descubrir que eje (x, y o z) es el que te interesa y el rango de 
-          *  valores que proporciona.
-          * */
-         SensorManager mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
-          List<Sensor> listSensors = mSensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER);
-         if (!listSensors.isEmpty()){
-        	 Sensor orientationSensor = listSensors.get(0);
-        	 mSensorManager.registerListener(this, orientationSensor, SensorManager.SENSOR_DELAY_GAME);
-         }
+         //registerSensorManager();
    
 
          // graficos vectoriales para el misil
@@ -166,6 +153,7 @@ public class VistaJuego extends View implements SensorEventListener {
 
 
 	}
+
 
 	@Override protected void onSizeChanged(int ancho, int alto,
                                           int ancho_anter, int alto_anter) {
@@ -291,6 +279,8 @@ public class VistaJuego extends View implements SensorEventListener {
    
    }
    
+   
+   
    /** MÓDULO 5 - Utilización de Sensores en Asteroides
     * Métodos 'onAccuracyChanged' y 'onSensorChange' que implementan
     * la interfaz 'SensorEventListener'
@@ -331,6 +321,24 @@ public class VistaJuego extends View implements SensorEventListener {
 		   tiempoMisil = (int) Math.min(this.getWidth() / Math.abs(misil.getIncX()), this.getHeight() / Math.abs(misil.getIncY()))-2;
 		   misilActivo = true;
 	   }
-	
+
+	public SensorManager getmSensorManager() {
+		return mSensorManager;
+	}
+
+	public void setmSensorManager(SensorManager mSensorManager) {
+		this.mSensorManager = mSensorManager;
+	}
+	   
+	public void registerSensorManager(Context context) {
+        SensorManager mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
+         List<Sensor> listSensors = mSensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER);
+        if (!listSensors.isEmpty()){
+       	 Sensor orientationSensor = listSensors.get(0);
+       	 mSensorManager.registerListener(this, orientationSensor, SensorManager.SENSOR_DELAY_GAME);
+        }
+        setmSensorManager(mSensorManager);
+
+	}
 	
 }

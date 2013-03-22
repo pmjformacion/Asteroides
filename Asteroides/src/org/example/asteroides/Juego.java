@@ -23,12 +23,14 @@ public class Juego extends Activity {
 	  @Override
 	  protected void onPause() {
 		  super.onPause();
+		  vistaJuego.getmSensorManager().unregisterListener(vistaJuego);
 		  vistaJuego.getThread().pausar();
 	  }
 	  
 	  @Override
 	  protected void onResume() {
 		  super.onResume();
+		  vistaJuego.registerSensorManager(getApplicationContext());
 		  vistaJuego.getThread().reanudar();
 	  }
 

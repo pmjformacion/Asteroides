@@ -42,5 +42,34 @@ Ejecutar aplicación para comprobar la secuencia de Toast
 * Aplicando eventos del ciclo de vida en Asteroides
   -------------------------------------------------
 
+	- Práctica: Aplicando eventos ciclo vida en actividad inicial Asteroides (I)
+	   
+	  Buscar un fichero de audio (format mp3 o mid), llamalo 'audio.xxx' y copialo
+	  en la carpeta 'res/raw'. Añadir sonido a la actividad "Asteroides.java"
+	  Para ello modifica el método onCreate creando la variable 'mp' del tipo
+	  MediaPlayer.
+	  
+	  Usar métodos mp.pause() y mp.start().
+	  
+	  OJO
+	  >> IMPORTANTE: para que suene la música no puedes arrancar el emulador con SNAPSHOT <<
+	  OJO	
+	  
+	- Práctica: Aplicando eventos ciclo vida en actividad inicial Asteroides (II)
 	
+	  Modifica la aplicación para que cuando se pulse 'Acerca de' la música siga 
+	  escuchándose porque el menú principal se ve.
+	  
+	  
+	- Práctica: Aplicando eventos de ciclo de vida en la actividad Juego para 
+		        desactivar los sensores
+		        
+	  Modificar para que los sensores se activen y se desactiven al jugar o
+	  volver al menú principal.
+	  Utilizar función mSensorManager.unregisterListener(this); y colocala
+	  donde creas que sea conveniente.
+	  Mover el registro del método onCreate() al método adecuado.
+	  
+	  
+	  
 	

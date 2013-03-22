@@ -26,7 +26,10 @@
     </style>
     
     <style name="TextoAsteroides.Botones">
-        <item name="android:fontFamily">sans</item>
+        <!-- TextView, android:fontFamily was added in API Level 16 -->
+        <!--  
+      	<item name="android:fontFamily">sans</item>
+      	-->
         <item name="android:textColor">#0000FF</item>
     </style>
     

@@ -81,32 +81,12 @@ public class Asteroides extends Activity {
 		
 		Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
 		
-		// Se añade música a la aplicación
+		// Se añade música a la aplicación (módulo 6)
 		mp = MediaPlayer.create(this, R.raw.audio);
 		mp.start();
 	}
 				
-	
 
-/** Comento esta parte de código, porque originalmente al crear la 
- *  actividad 'Asteroides" con el Eclipse, la plataforma de desarrollo
- *  Android me definió el método 'OnCreateOptionsMenu' con un menú
- *  que también creó llamado 'main.xml' en la carpeta res/menu	
- 
-	
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		
-		
-		
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-
-* aquí termina el código comentado del creado originalmente al crear la activiad 'Asteroides'	
-*/	
-	
 	
 	public void lanzarAcercaDe(View view){
 		// Arranca la actividad 'Acerca De'
@@ -190,14 +170,13 @@ public class Asteroides extends Activity {
 	protected void onPause(){
 		super.onPause();
 		Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
-		mp.pause();
 	}	
 	
 	@Override
 	protected void onStop(){
 		super.onStop();
 		Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show();
-		mp.stop();
+		mp.pause();
 	}	
 	
 	@Override
