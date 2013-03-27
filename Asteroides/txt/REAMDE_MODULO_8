@@ -1,0 +1,23 @@
+
+
+MODULO 8: Servicios, notificaciones y receptores de anuncios
+
+
+  -----------------------------------------
+* Las notificaciones en la barra de estado
+  -----------------------------------------
+  
+  -Práctica: Uso del servicio de música en Asteroides.
+
+   Copia la clase ServicioMusica realizada en el ejercicio anterior al proyecto Asteroides
+   Corrigue los errores que aparezcan.
+   
+   Yo asumo que lo único que hago es arrancar el servicio y mostrar una notificación 
+   pero que el servicio no toque la música, ya que el juego tiene la música.
+   
+   Y al salir del juego se pare la música.
+   
+   
+   
+
+

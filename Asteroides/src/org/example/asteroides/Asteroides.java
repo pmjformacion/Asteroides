@@ -84,6 +84,10 @@ public class Asteroides extends Activity {
 		// Se añade música a la aplicación (módulo 6)
 		mp = MediaPlayer.create(this, R.raw.audio);
 		mp.start();
+		
+		
+		
+		
 	}
 				
 
@@ -97,6 +101,7 @@ public class Asteroides extends Activity {
 	
 	public void lanzarSalir(View view){
 		// Finaliza la actividad 'Asteroides'
+		stopService(new Intent(Asteroides.this, ServicioMusica.class));
 		finish();
 		//lanzarPuntuaciones(null);
 	}
@@ -117,6 +122,8 @@ public class Asteroides extends Activity {
 	public void lanzarJuego(View view){
 		Intent i = new Intent(this, Juego.class);
 		startActivity(i);
+		startService(new Intent(Asteroides.this, ServicioMusica.class));
+		
 	}
 	
 	
