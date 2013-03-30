@@ -8,6 +8,7 @@
         android:minSdkVersion="7"
         android:targetSdkVersion="17" />
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
 
     <application
         android:allowBackup="true"
@@ -28,6 +29,14 @@
         <activity android:name="Puntuaciones" android:label="Puntuaciones"></activity>
         <activity android:name="Juego" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
         <service android:name="ServicioMusica" android:permission="android.permission.VIBRATE" android:icon="@drawable/iconapp"></service>
+        
+       <!-- registro un receptor de anuncios para Androides -->
+       <receiver android:name=".ReceptorAnuncio" >
+           <intent-filter>
+               <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+           </intent-filter>
+       </receiver>
+        
     </application>
 
 </manifest>

@@ -1,0 +1,15 @@
+
+
+Para simular la recepción de SMS en el emulador de Android lo que hice fue:
+
+1. Activar cliente TELNET en Windows 7 a través del 
+           Panel de control-> Programas -> Activar o desactivar característicaas de Windows
+           
+2. Abrir un terminal de comandos DOS en Windows
+
+3. Teclear:  telnet localhost 5556
+
+4. Y conectados via telnet al emulador mander un SMS para que lo reciba
+
+   sms send +123456789 mensaje
+   

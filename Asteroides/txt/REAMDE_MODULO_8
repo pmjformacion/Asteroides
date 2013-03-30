@@ -12,12 +12,32 @@ MODULO 8: Servicios, notificaciones y receptores de anuncios
    Copia la clase ServicioMusica realizada en el ejercicio anterior al proyecto Asteroides
    Corrigue los errores que aparezcan.
    
-   Yo asumo que lo único que hago es arrancar el servicio y mostrar una notificación 
-   pero que el servicio no toque la música, ya que el juego tiene la música.
+   Lo que haré es arrancar el servicio con una música distinta a la del juego y mostrar una 
+   notificación informando de el servicio se ha arrancado. El servicio se para solo cuando
+   se da a la tecla Salir del juego, parando la música.
    
-   Y al salir del juego se pare la música.
    
-   
+  --------------------------------------------------
+* Configurando tipos de avisos en las notificaciones
+  --------------------------------------------------
+  
+  
+  --------------------------------------------------
+* Receptores de anuncios
+  --------------------------------------------------
+  
+  - Práctica: Arranque de una actividad desde un receptor de anuncio
+
+              Modifica el proyecto Asteroides para que se arranque automáticamente la actividad 
+              'AcercaDe' al llegar un SMS cualquiera.
+              OJO, al modificar acuerdate de antes de lanzar la actividad 'AcercaDe' de incluir
+              la siguiente línea para que se lance la actividad, porque sino no se lanza:
+                           
+                           i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+  
+  			  Hasta que no incluí esa línea porque la vi en el Foro del curso, no me funciono.
+  			  
+  			  
    
 
 
