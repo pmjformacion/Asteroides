@@ -119,6 +119,19 @@ public class Asteroides extends Activity {
 		startActivity(i);
 	}
 	
+	// Modulo 9: para que nos devuelva la puntuación del juego
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if (requestCode == 1234 & resultCode == RESULT_OK & data != null){
+			int puntuacion = data.getExtras().getInt("puntuacion");
+			String nombre = "Yo";
+			// Mejor leerlo desde un Dialog o una nueva actividad AlterDialog.Builder
+			almacen.guardaPuntuaciones(puntuacion, nombre, System.currentTimeMillis());
+			lanzarPuntuaciones(null);		
+		}
+	}
+	
 	
 	/**
 	 * Código para activar el menú en la actividad 'Asteroides'

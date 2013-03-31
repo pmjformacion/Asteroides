@@ -4,13 +4,16 @@ package org.example.asteroides;
 import java.util.List;
 import java.util.Vector;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -21,7 +24,6 @@ public class VistaJuego extends View implements SensorEventListener {
 	private Vector<Grafico> Asteroides; // Vector con los Asteroides
 	private int numAsteroides= 5; // Número inicial de asteroides
 	private int numFragmentos= 3; // Fragmentos en que se divide
-	
 	
 	// //// NAVE //////
 	private Grafico nave;	// Grafico de la nave
@@ -47,6 +49,9 @@ public class VistaJuego extends View implements SensorEventListener {
 	private boolean misilActivo = false;
 	private int tiempoMisil;
 	
+	// //// CALCULAR PUNTUACIÓN //// //
+	private int puntuacion = 0;
+	
 	
 	// Para el manejo de la nave con pantalla dactil
 	private float mX=0, mY=0;
@@ -54,6 +59,28 @@ public class VistaJuego extends View implements SensorEventListener {
 	
 	// Hago private mSensorManager para poder desactivar los sensores.
 	private SensorManager mSensorManager;
+	
+	
+	/** 
+	 * Módulo 9: Almacenamiento de datos
+	 * La respuesta de puntuación se hace en 'VistaJuego' que es una View y no 
+	 * una Activity. Para eso creo la variable 'padre' y el método setPadre()
+	 */
+	private Activity padre;
+	
+	public void setPadre(Activity padre){
+		this.padre = padre;
+	}
+	
+	private void salir(){
+		Bundle bundle = new Bundle();
+		bundle.putInt("puntuacion", puntuacion);
+		Intent intent = new Intent();
+		intent.putExtras(bundle);
+		padre.setResult(Activity.RESULT_OK, intent);
+		padre.finish();
+	}
+	
 	
 	/**
 	 * Módulo 5: Entradas en Android
@@ -240,8 +267,14 @@ public class VistaJuego extends View implements SensorEventListener {
     	   }
        }
        
+       for (Grafico asteroide : Asteroides){
+    	   if (asteroide.verificaColision(nave)) {
+    		   salir();
+    	   }
+       }
        
-   }
+   } // fin metodo actualizaFisica
+   
    
    // función para el control de los eventos de la pantalla tactil
    // añadidos en el módulo 5 del curso
@@ -309,7 +342,11 @@ public class VistaJuego extends View implements SensorEventListener {
 	  
 	   private void destruyeAsteroide(int i) {
 		   Asteroides.remove(i);
+		   puntuacion +=1000;
 		   misilActivo = false;
+		   if (Asteroides.isEmpty()){
+			   salir();
+		   }
 	   }
 	   
 	   private void ActivaMisil() {
