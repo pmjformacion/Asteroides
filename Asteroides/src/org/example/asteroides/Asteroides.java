@@ -84,6 +84,8 @@ public class Asteroides extends Activity {
 		// Se añade música a la aplicación (módulo 6)
 		mp = MediaPlayer.create(this, R.raw.audio);
 		mp.start();
+		
+		almacen = new AlmacenPuntuacionesPreferencias(this);
 	}
 				
 

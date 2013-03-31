@@ -7,4 +7,21 @@ MODULO 6: Almacenamiento de datos
 * Añadiendo puntuaciones en Asteroides
   ------------------------------------
 
-	- Ejercicio paso a paso: Calculando la puntuacion en Asteroides
+	- Ejercicio paso a paso: Calculando la puntuacion en Asteroides. Se calcula la puntuación del juego.
+	  El juego termnina al acabar con todas los asteroides o al chocar la nave contra alguno. La puntuación
+	  no se almacena en ningún sitio
+	
+	
+  ------------------------------------
+* Preferencias
+  ------------------------------------
+
+  	- Ejercicio paso a paso: Almacenando la última puntuación en un fichero de preferencias.
+  	  Se crea un fichero de preferencias ('MiFicheroDePreferencias.xml) para almacenar la última puntuación
+  	  obtenida en Asteroides. Crea la clase nueva AlmacenPuntuacionesPreferencias.java que immplenta la 
+  	  interfaz AlmacenPuntuaciones.java
+  	  
+  	  
+  	  
+  	
+  
