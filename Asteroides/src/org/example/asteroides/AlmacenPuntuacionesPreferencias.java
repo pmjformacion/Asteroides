@@ -25,7 +25,10 @@ public class AlmacenPuntuacionesPreferencias implements AlmacenPuntuaciones {
 		
 		SharedPreferences preferencias = context.getSharedPreferences(PREFERENCIAS, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = preferencias.edit();
-		editor.putString("puntuaciones", puntos + " " + nombre + " " + dateString);
+		for (int n = 9; n >= 1; n--){
+			editor.putString("puntuacion" + n, preferencias.getString("puntuacion" + (n-1), ""));
+		}
+		editor.putString("puntuacion0", puntos + " " + nombre + " " + dateString);
 		editor.commit();
 		
 
@@ -35,9 +38,13 @@ public class AlmacenPuntuacionesPreferencias implements AlmacenPuntuaciones {
 	public Vector<String> listaPuntuaciones(int cantidad) {
 		Vector<String> result = new Vector<String>();
 		SharedPreferences preferencias = context.getSharedPreferences(PREFERENCIAS, Context.MODE_PRIVATE);
-		String s = preferencias.getString("puntuaciones", "");
-		if (s != ""){
-			result.add(s);
+		
+		for (int n=0; n<=9; n++){
+			String s = preferencias.getString("puntuacion"+n, "");
+			if (s != ""){
+				result.add(s);
+			}
+
 		}
 		return result;
 	}

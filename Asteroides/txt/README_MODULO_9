@@ -21,6 +21,18 @@ MODULO 6: Almacenamiento de datos
   	  obtenida en Asteroides. Crea la clase nueva AlmacenPuntuacionesPreferencias.java que immplenta la 
   	  interfaz AlmacenPuntuaciones.java
   	  
+  	  OJO: Al principio solo hay que definir 'almacen' pero implementarlo en onCreate()
+  	  
+  	  
+  	- Practica: Almacenando las ultimas 10 puntuaciones en un fichero preferencias
+  	   * Las preferencias no almacenan vectores, solo variables simples. Así que se pueden crear 10 preferencias 
+  	     con nombres puntuacion0, puntuacion1, ... puntuacion9.
+  	   * Al llamar al método guardarPuntuaciones() almacena la nueva puntuacion en 0 y copia las demás para
+  	     moverlas.
+  	   * El mismo truco hay que usar en ListaPuntuaciones();
+  	   
+  	   
+  	  
   	  
   	  
   	
