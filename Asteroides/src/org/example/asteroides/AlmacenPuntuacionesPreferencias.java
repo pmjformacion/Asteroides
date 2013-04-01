@@ -1,5 +1,7 @@
 package org.example.asteroides;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Vector;
 
 import android.content.Context;
@@ -18,9 +20,12 @@ public class AlmacenPuntuacionesPreferencias implements AlmacenPuntuaciones {
 
 	@Override
 	public void guardaPuntuaciones(int puntos, String nombre, long fecha) {
+		SimpleDateFormat sdf = new SimpleDateFormat("E, MMM dd, yyyy");
+		String dateString = sdf.format(new Date(fecha));
+		
 		SharedPreferences preferencias = context.getSharedPreferences(PREFERENCIAS, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = preferencias.edit();
-		editor.putString("puntuaciones", puntos + " " + nombre);
+		editor.putString("puntuaciones", puntos + " " + nombre + " " + dateString);
 		editor.commit();
 		
 

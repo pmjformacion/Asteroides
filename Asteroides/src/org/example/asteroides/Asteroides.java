@@ -21,8 +21,8 @@ public class Asteroides extends Activity {
 	
 	private MediaPlayer mp;
 	
-	public static AlmacenPuntuaciones almacen = new AlmacenPuntuacionesArray();
-	
+	//public static AlmacenPuntuaciones almacen = new AlmacenPuntuacionesArray();
+	public static AlmacenPuntuaciones almacen;
 	
 	
 	/**
@@ -118,14 +118,15 @@ public class Asteroides extends Activity {
 	
 	public void lanzarJuego(View view){
 		Intent i = new Intent(this, Juego.class);
-		startActivity(i);
+		//startActivity(i);
+		startActivityForResult(i, 1234);
 	}
 	
 	// Modulo 9: para que nos devuelva la puntuación del juego
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		if (requestCode == 1234 & resultCode == RESULT_OK & data != null){
+		if (requestCode == 1234 & resultCode == RESULT_OK & data != null){	
 			int puntuacion = data.getExtras().getInt("puntuacion");
 			String nombre = "Yo";
 			// Mejor leerlo desde un Dialog o una nueva actividad AlterDialog.Builder
