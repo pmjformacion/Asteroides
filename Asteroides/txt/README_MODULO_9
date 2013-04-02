@@ -31,6 +31,9 @@ MODULO 6: Almacenamiento de datos
   	     moverlas.
   	   * El mismo truco hay que usar en ListaPuntuaciones();
   	   
+  	- Práctica: Almacenando puntuaciones en un fichero de la memoria interna.
+  	   Se define una clase nueva llamada 'AlmacenPuntuacionesFicheroInterno' que implementará la
+  	   interfaz 'AlmacenPuntuaciones'
   	   
   	  
   	  

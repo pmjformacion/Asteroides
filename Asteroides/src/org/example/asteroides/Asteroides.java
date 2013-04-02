@@ -85,7 +85,9 @@ public class Asteroides extends Activity {
 		mp = MediaPlayer.create(this, R.raw.audio);
 		mp.start();
 		
-		almacen = new AlmacenPuntuacionesPreferencias(this);
+		// Para almacenar en el fichero de preferencias 'preferencias.xml'
+		//almacen = new AlmacenPuntuacionesPreferencias(this);
+		almacen = new AlmacenPuntuacionesFicheroInterno(this);
 	}
 				
 
