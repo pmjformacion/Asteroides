@@ -43,7 +43,7 @@ MODULO 6: Almacenamiento de datos
   	  Cuando vuelva a haber nueva forma de almacenar, se incluirá en la lista de preferencias.
   	  Tal y como lo he implementado, la modificación no tiene efecto hasta que se cierre la aplicación y se vuelva
   	  a ejecutar.
-  	  
+  	  OJO: eN EMULADOR Terminal V_2_3_3 que utilizo el path de la sdcard es: /mnt/sdcard/
   	   
   	  
   	  

@@ -101,6 +101,9 @@ public class Asteroides extends Activity {
 		case 2:
 			almacen = new AlmacenPuntuacionesFicheroInterno(this);
 			break;
+		case 3:
+			almacen = new AlmacenPuntuacionesFicheroExterno(this);
+			break;
 		default:
 			break;
 		}
