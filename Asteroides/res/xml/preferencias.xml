@@ -20,6 +20,13 @@
 		android:key="fragmentos"
 		android:title="Número de Fragmentos"
 		android:summary="En cuantos trozos se divide un asteroide"
-		android:defaultValue="3"/>    
+		android:defaultValue="3"/>
+	<ListPreference 
+	    android:entryValues="@array/tipoAlmcenDatosValores" 
+	    android:entries="@array/tipoAlmacenDatos" 
+	    android:key="tipoAlmacen" 
+	    android:title="Tipo de almacén" 
+	    android:summary="Se escoge dónde se almacenan los puntos" 
+	    android:defaultValue="1"/>    
 
 </PreferenceScreen>

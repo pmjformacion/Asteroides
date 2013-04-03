@@ -31,9 +31,19 @@ MODULO 6: Almacenamiento de datos
   	     moverlas.
   	   * El mismo truco hay que usar en ListaPuntuaciones();
   	   
-  	- Práctica: Almacenando puntuaciones en un fichero de la memoria interna.
+  	- Ejercicio paso a paso: Almacenando puntuaciones en un fichero de la memoria interna.
   	   Se define una clase nueva llamada 'AlmacenPuntuacionesFicheroInterno' que implementará la
   	   interfaz 'AlmacenPuntuaciones'
+  	   
+  	- Práctica: Configurar almacenamiento de puntuaciones desde preferencias
+  	  Modificar las preferencias de la aplicación 'Asteroides' para que el usuario pueda elegir dónde se guardan
+  	  las puntuaciones. De momento tres opciones: 'Array',  'Preferencias' y 'Fichero en memoria interna'
+  	  Cambiar el código en método Asteroides.onCreate() para que inicalice la variable almacen de forma adecuada 
+  	  según el valor introducido en preferencias.
+  	  Cuando vuelva a haber nueva forma de almacenar, se incluirá en la lista de preferencias.
+  	  Tal y como lo he implementado, la modificación no tiene efecto hasta que se cierre la aplicación y se vuelva
+  	  a ejecutar.
+  	  
   	   
   	  
   	  

@@ -2,8 +2,10 @@ package org.example.asteroides;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -81,13 +83,31 @@ public class Asteroides extends Activity {
 		
 		Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
 		
+	
+		
 		// Se añade música a la aplicación (módulo 6)
 		mp = MediaPlayer.create(this, R.raw.audio);
 		mp.start();
-		
+
+		SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+		int tipoAlmacen = Integer.valueOf(sharedPref.getString("tipoAlmacen", "1"));
+		switch (tipoAlmacen) {
+		case 0: 
+			almacen = new AlmacenPuntuacionesArray();
+			break;
+		case 1:
+			almacen = new AlmacenPuntuacionesPreferencias(this);
+			break;
+		case 2:
+			almacen = new AlmacenPuntuacionesFicheroInterno(this);
+			break;
+		default:
+			break;
+		}
+
 		// Para almacenar en el fichero de preferencias 'preferencias.xml'
 		//almacen = new AlmacenPuntuacionesPreferencias(this);
-		almacen = new AlmacenPuntuacionesFicheroInterno(this);
+		//almacen = new AlmacenPuntuacionesFicheroInterno(this);
 	}
 				
 

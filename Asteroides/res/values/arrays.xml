@@ -11,6 +11,16 @@
 		<item>0</item>
 		<item>1</item>
 		<item>2</item>
+	</string-array>
+	<string-array name="tipoAlmacenDatos">
+		<item >Array</item>
+		<item >Preferencias</item>
+		<item >Fichero en memoria interna</item>
+	</string-array>
+	<string-array name="tipoAlmcenDatosValores">
+		<item >0</item>
+		<item >1</item>
+		<item >2</item>
 	</string-array>    
     
 </resources>
