@@ -52,6 +52,13 @@ MODULO 6: Almacenamiento de datos
   	  IMPORTANTE: si usas el simulador de Android, el estado que devuelve el método Environment.getExternalStorageState()
   	  es 'removed', con lo cual ya no escribe en la memoria externa, como si lo hacía en la práctica anterior
   	  
+  	  
+  	- Ejercicio paso a paso: Almacenando puntuaciones en un fichero de recursos.
+  	  Se crea una nueva clase llamada 'AlmacenPuntuacionesRecurso' y se deja sin contenido el método guardarPuntuaciones(); 
+  	  IMPORTANTE: No se guardan puntos en el fichero de recursos, porque por tratarse de un fichero de recursos no se puede
+  	  escribir en él.
+  	  
+  	  
   	   
   	  
   	  
