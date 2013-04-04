@@ -11,6 +11,7 @@ import java.util.Vector;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
+import android.widget.Toast;
 
 public class AlmacenPuntuacionesFicheroExterno implements AlmacenPuntuaciones {
 
@@ -24,6 +25,13 @@ public class AlmacenPuntuacionesFicheroExterno implements AlmacenPuntuaciones {
 	}
 	@Override
 	public void guardaPuntuaciones(int puntos, String nombre, long fecha) {
+		// Comprueba si la memoria externa está protegida contra escritura
+		String stadoSD = Environment.getExternalStorageState();
+		if (!stadoSD.equals(Environment.MEDIA_MOUNTED)){
+			Toast.makeText(context, "No puedo escribir en la memoria externa", Toast.LENGTH_LONG).show();
+			return;
+		}
+		
 		try {
 			// para poner la fecha en formato diasemana, mes dia, año
 			SimpleDateFormat sdf = new SimpleDateFormat("E, MMM dd, yyyy");
@@ -42,6 +50,16 @@ public class AlmacenPuntuacionesFicheroExterno implements AlmacenPuntuaciones {
 	@Override
 	public Vector<String> listaPuntuaciones(int cantidad) {
 		Vector <String> result = new Vector<String>();
+		
+		// Compruebo si tengo acceso a la memoria externa
+		String stadoSD = Environment.getExternalStorageState();
+		if (!stadoSD.equals(Environment.MEDIA_MOUNTED) && !stadoSD.equals(Environment.MEDIA_MOUNTED_READ_ONLY)){
+			Toast.makeText(context, "No puedo leer en la memoria externa", Toast.LENGTH_LONG).show();
+			return result;
+			
+		}
+		
+		
 		try {
 			FileInputStream f = new FileInputStream(FICHERO);
 			BufferedReader entrada = new BufferedReader(new InputStreamReader(f));
