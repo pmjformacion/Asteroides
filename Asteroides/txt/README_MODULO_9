@@ -58,7 +58,11 @@ MODULO 6: Almacenamiento de datos
   	  IMPORTANTE: No se guardan puntos en el fichero de recursos, porque por tratarse de un fichero de recursos no se puede
   	  escribir en él.
   	  
-  	  
+  	- Ejercicio paso a paso: Almacenando puntuaciones en XML con SAX.
+  	  Se crea la clase 'AlmacenPuntuacionesXML_SAX' que en su interior contiene la clase 'ListaPuntuaciones' y dentro de la
+  	  clase ListaPuntuaciones se definen las clases 'Puntuacion' y 'ManejadorXML'.
+  	  La puntuación se almacena en un fichero XML que cuelga de data/data/or.examples.asteroides/shared_prefs
+  	  El nombre del fichero es 'puntuaciones.xml'
   	   
   	  
   	  
