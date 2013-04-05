@@ -63,6 +63,17 @@ MODULO 6: Almacenamiento de datos
   	  clase ListaPuntuaciones se definen las clases 'Puntuacion' y 'ManejadorXML'.
   	  La puntuación se almacena en un fichero XML que cuelga de data/data/or.examples.asteroides/shared_prefs
   	  El nombre del fichero es 'puntuaciones.xml'
+  	  
+  	  
+  	- Ejercicio paso a paso: Utilizando una base de datos para guardar puntuaciones.
+  	  Se va a usar menos código que en las soluciones anteriores. La base de datos te da mas funcionalidad: ordenar, eliminar 
+  	  entradas antiguas.
+  	  Se crea la clase 'AlmacenPuntuacionesSQLite'
+
+  	- Ejercicio paso a paso: Verificación de los ficheros creados.
+  	  Hice una partida para todos los modos de almacenamiento con 5000 puntos. Capturé en el fichero AlmacenPuntuaciones_File_Sizes.jpg
+  	  el tamaño de cada fichero
+  	  
   	   
   	  
   	  
