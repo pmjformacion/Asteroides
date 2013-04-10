@@ -1,0 +1,16 @@
+
+MODULO 10: Internet: sockets, HTTP y servicios web
+
+
+  ----------------------------------------------
+* Un servidor por sockets para las puntuaciones
+  ----------------------------------------------
+
+	- Ejercicio paso a paso: Estudio del protocolo PUNTUACIONES utilizando el comando telnet
+	  Esta práctica da por hecho que antes ha hecho una aplicación en JAVA llamada 
+	  'ServidorPuntuacionesSocket' que es la que va a dar servicio de almacen de puntuaciones
+	  en el puerto 1234 del servidor donde corra.
+	  Se crea la clase 'AlmacenPuntuacionesSocket' para implementar el protocolo PUNTUACIONES
+	  y así guardar o recuperar las puntuaciones en el servidor socket de puntuaciones que 
+	  previamente se ha implementado en Java.
+	

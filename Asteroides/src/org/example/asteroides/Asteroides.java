@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -39,6 +40,13 @@ public class Asteroides extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		
+		
+		// Podemos usar un nivel de api superior al 9, y que nos deje usar sockets desde el hilo principal. 
+		// Esto se hace de la siguiente forma:
+		StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitNetwork().build());
+		
+		
 		
 		// Añadimos un Listener Event (oyente de eventos)
 		// para el botón 'Acerca de'
@@ -112,6 +120,9 @@ public class Asteroides extends Activity {
 			break;
 		case 6:
 			almacen = new AlmacenPuntuacionesSQLite(this);
+			break;
+		case 7:
+			almacen = new AlmacenPuntuacionesSocket();
 			break;
 		default:
 			break;
